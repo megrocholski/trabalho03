@@ -69,7 +69,8 @@ function Cart() {
           data.status == 200
             ? (setMessage("Pedido finalizado com sucesso!"), handleClick())
             : (setMessage("Ocorreu um erro, tente novamente"), handleClick())
-        );
+        )
+        .catch(() => console.log(""));
     } else {
       setMessage("Carrinho vazio");
       handleClick();
@@ -92,7 +93,8 @@ function Cart() {
           ),
           setTotal(valorTotal)
         )
-      );
+      )
+      .catch(() => console.log(""));
 
     // calcTotal();
   }, [cart]);
